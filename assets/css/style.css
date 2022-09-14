@@ -1,0 +1,405 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-main {
+    height: 100%;
+    width: 100%;
+}
+
+.grid-areas {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 5em auto 5em;
+    grid-template-areas:
+        'header header'
+        'sidebar content'
+        'footer footer';
+}
+
+/* ====== header */
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    background-color: #efefef;
+    justify-items: center;
+    align-items: center;
+    position: sticky;
+}
+
+.header img {
+    margin-right: 15em;
+}
+
+.header lord-icon {
+    margin-left: 10em;
+    cursor: pointer;
+}
+
+.header p {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* ====== sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #efefef;
+    border-top: solid 6px #f7f7f7;
+}
+
+.sidebar p {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    line-height: 0.5;
+}
+
+#top {
+    padding-left: 0.5em;
+}
+
+/* ====== productos */
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1em 1em;
+    align-content: center;
+    justify-content: center;
+    background-color: #f7f7f7;
+}
+
+/* ====== card productos */
+.item-baño {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1em;
+    transition: 0.5s;
+}
+
+.item-baño button {
+    text-align: center;
+}
+
+.item-baño button:hover {
+    background-color: rgb(246, 213, 153);
+}
+
+.item-baño:hover {
+    box-shadow: 0px 10px 15px rgba(157, 154, 154, 0.5);
+}
+
+/* salto de imagen */
+.item-baño img:last-of-type {
+    display: none;
+    transition: 0.2s;
+}
+
+.item-baño:hover img:last-of-type {
+    display: block;
+    transition: 0.2s;
+}
+
+.item-baño:hover img:first-of-type {
+    display: none;
+    transition: 0.2s;
+}
+
+/* ========= */
+
+.item-baño div {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.item-baño button {
+    text-align: center;
+}
+
+#titulo {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.item-baño p {
+    font-weight: 300;
+    padding-top: 0;
+    font-size: 1em;
+}
+
+button {
+    margin: 1.5em auto;
+    border: none;
+    text-align: center;
+    background-color: rgb(227, 228, 230);
+    font-weight: bold;
+    padding: 0.5em 2em;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* ====== footer */
+.footer {
+    grid-area: footer;
+    background-color: #efefef;
+    text-align: center;
+    margin: 0;
+    border-top: solid 6px #f7f7f7;
+}
+
+.footer p {
+    padding-top: 1em;
+    font-size: 1em;
+}
+
+
+
+/* ====== Media Queries SMALL ========== */
+/* ====== SMALL ========== */
+
+@media (max-width: 575px) {
+
+    /* ====== header */
+    .header p {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .header img {
+        padding-left: 0.5em;
+        margin: 0;
+    }
+
+    .header lord-icon {
+        padding-right: 0.5em;
+        margin: 0;
+    }
+
+    /* ====== contenido */
+    .grid-areas {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5em 5em auto 5em;
+        grid-template-areas:
+            'header'
+            'sidebar'
+            'content'
+            'footer';
+    }
+
+    /* ====== card productos */
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: repeat(10, 1fr);
+        gap: 1em 1em;
+        padding: 0 auto;
+        background-color: #f7f7f7;
+        justify-items: center;
+    }
+
+    .item-baño {
+        max-width: 300px;
+        line-height: initial;
+    }
+
+    #titulo {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    /* ====== sidebar */
+    .sidebar {
+        grid-area: sidebar;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        font-size: 0.8em;
+    }
+
+    .sidebar p:hover {
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    #top {
+        display: none;
+    }
+
+    /* ====== footer */
+    .footer {
+        font-size: 0.8em;
+    }
+}
+
+/* ====== MEDIUM ========== */
+@media (min-width: 576px) and (max-width: 767px) {
+
+    /* ====== header */
+    .header p {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .header img {
+        padding-left: 0.5em;
+        margin: 0;
+    }
+    .header lord-icon {
+        padding-right: 0.5em;
+        margin: 0;
+    }
+
+    /* ====== contenido */
+    .grid-areas {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5em 5em auto 5em;
+        grid-template-areas:
+            'header'
+            'sidebar'
+            'content'
+            'footer';
+    }
+
+    /* ====== card productos */
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1em;
+        padding: 0 auto;
+        background-color: #f7f7f7;
+    }
+
+    .item-baño {
+        max-width: 300px;
+    }
+
+    /* ====== sidebar */
+    .sidebar {
+        grid-area: sidebar;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+    }
+
+    .sidebar p:hover {
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    #top {
+        display: none;
+    }
+}
+
+/* ====== LARGE ========== */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* ====== header */
+    .header img {
+        margin-right: 6em;
+    }
+
+    .header lord-icon {
+        margin-left: 6em;
+    }
+
+    /* ====== contenido */
+    .grid-areas {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 5em auto 5em;
+        grid-template-areas:
+            'header header'
+            'sidebar content'
+            'footer footer';
+    }
+
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1em;
+        padding: 0 auto;
+        background-color: #f7f7f7;
+    }
+
+    /* ====== card productos */
+    .item-baño {
+        max-width: 300px;
+    }
+
+    /* ====== sidebar */
+    .sidebar p:hover {
+        cursor: pointer;
+        background-color: #f7f7f7;
+        width: 300px;
+        transition: 0.5s;
+    }
+}
+
+/* ====== LARGE PC ========== */
+@media (min-width: 992px)
+
+/*and (max-width: 1200px)*/
+    {
+
+    /* ====== header */
+    .header img {
+        margin-right: 10em;
+    }
+
+    .header lord-icon {
+        margin-left:12em;
+    }
+
+    /* ====== contenido */
+    .grid-areas {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 5em auto 5em;
+        grid-template-areas:
+            'header header'
+            'sidebar content'
+            'footer footer';
+    }
+
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1em;
+        padding: 0 auto;
+        background-color: #f7f7f7;
+    }
+
+    .item-baño {
+        padding-bottom: 0;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    /* ====== sidebar */
+    .sidebar p:hover {
+        cursor: pointer;
+        background-color: #f7f7f7;
+        width: 300px;
+        transition: 0.5s;
+    }
+}
